@@ -13,7 +13,6 @@ contact:
   - given-names: "Federico"
     family-names: "Ruilova"
     affiliation: "GreenPow Labs GmbH"
-    email: "fr@network.berlin"
     orcid: "https://orcid.org/0000-0002-3577-2065"
 abstract: >-
   Research code and 72 executed PLEXOS runs accompanying a study of vehicle-to-grid
