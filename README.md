@@ -2,6 +2,10 @@
 
 This is a code-only review candidate extracted from a private research repository. It contains no project datasets, third-party carbon-intensity values, simulation profiles, workbooks, notebooks, figures, generated results, or prior Git history. It includes only the carbon-accounting module; it is not the full `v2g-lec-multipricing` pipeline and does not reproduce the complete paper workflow on its own.
 
+## Executed PLEXOS archive
+
+The 72-run v13 simulation results are intended for public release as a separate Zenodo dataset because the archive is approximately 200 MB. The archive is prepared but **not yet publicly deposited**; it is not stored in this GitHub repository. See [archive release notes](docs/DRJ_V13_ARCHIVE_RELEASE_NOTES.md) and [SHA-256 checksum](docs/DRJ_V13_ARCHIVE_SHA256SUMS). The companion post-processing pipeline required to regenerate all paper tables and figures is not included in this minimal release.
+
 ## Repository boundary
 
 The complete collaboration repository remains private. This folder is a staging copy for a separate, minimal public release intended for a new repository under GreenPow's GitHub organization. It must not be used to make the private repository public or to mirror the full research workspace. The executed PLEXOS archive is a separate dataset candidate for Zenodo, not a GitHub repository file.
