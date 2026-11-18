@@ -1,6 +1,8 @@
 # V2G multi-market analysis: code and simulation results
 
-This repository shares a small carbon-accounting module and the executed results from 72 PLEXOS runs. It gives readers access to the archived simulation outputs and lets them inspect the accounting code. It does **not** contain the complete workflow used to produce every result in the paper.
+GreenPow Labs shares research code and 72 executed PLEXOS runs for studying vehicle-to-grid (V2G) demand response in local energy communities. The study compares smart charging and V2G across day-ahead and intraday markets, then settles schedules against actual conditions. The research connects distributed energy resources, electricity-market optimization, energy storage, and carbon accounting.
+
+The related paper, “Multi-Pricing Arbitrage Potential for V2G Demand Response Services in Local Energy Communities,” lists Federico Ruilova's affiliation as GreenPow Labs. Read the [study overview](docs/STUDY_OVERVIEW.md) for the research context and assumptions. This repository does not contain the complete analysis workflow, so it cannot regenerate every result reported in the paper.
 
 ## Download the simulation results
 
@@ -14,6 +16,8 @@ See the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) for included and omitte
 - [`requirements.txt`](requirements.txt): Python dependencies.
 - [`docs/INPUT_SCHEMA.md`](docs/INPUT_SCHEMA.md): input columns used by the accounting functions.
 - [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md): what can be reviewed or rerun from the available materials.
+- [`docs/STUDY_OVERVIEW.md`](docs/STUDY_OVERVIEW.md): research question, scope, and relation to the paper.
+- [`CITATION.cff`](CITATION.cff): citation metadata for this repository.
 
 This is a partial release. The companion post-processing workflow, including `postprocessing/run_all.py`, is not included. As a result, the archive and code here do not reproduce all paper KPIs, tables, or figures. The archive lets you inspect the executed simulation outputs, but the paper results have not been regenerated from the files in this release.
 
