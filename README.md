@@ -15,6 +15,7 @@ See the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) for included and omitte
 - [`src/emissions_accounting.py`](src/emissions_accounting.py): dataframe functions for emissions accounting and related summaries.
 - [`requirements.txt`](requirements.txt): Python dependencies.
 - [`docs/INPUT_SCHEMA.md`](docs/INPUT_SCHEMA.md): input columns used by the accounting functions.
+- [`docs/CARBON_ACCOUNTING_GUIDE.md`](docs/CARBON_ACCOUNTING_GUIDE.md): a synthetic example, units, function guide, and accounting boundaries.
 - [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md): what can be reviewed or rerun from the available materials.
 - [`docs/STUDY_OVERVIEW.md`](docs/STUDY_OVERVIEW.md): research question, scope, and relation to the paper.
 - [`CITATION.cff`](CITATION.cff): citation metadata for this repository.
@@ -31,7 +32,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-The functions accept pandas DataFrames. They do not download project or third-party data. Provide only inputs you are entitled to use and share. See [`docs/INPUT_SCHEMA.md`](docs/INPUT_SCHEMA.md) and check the function definitions for each function's exact fields and units.
+The functions accept pandas DataFrames and do not download project or third-party data. Start with the [synthetic example](docs/CARBON_ACCOUNTING_GUIDE.md), then check the [input schema](docs/INPUT_SCHEMA.md) and function definitions for exact fields and units. Provide only data you are entitled to use and share.
 
 ## Rights and permissions
 

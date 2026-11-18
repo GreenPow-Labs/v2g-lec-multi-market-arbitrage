@@ -1,6 +1,6 @@
 # Inputs for the emissions accounting functions
 
-`src/emissions_accounting.py` transforms pandas DataFrames. It does not load the project files or fetch external data. Required columns depend on which function you call; inspect that function's definition for its complete fields and units.
+`src/emissions_accounting.py` transforms pandas DataFrames. It does not load the project files or fetch external data. Required columns depend on which function you call; inspect that function's definition for its complete fields and units. The [carbon-accounting guide](CARBON_ACCOUNTING_GUIDE.md) has a runnable-style synthetic example and explains the main accounting boundaries.
 
 The hourly workflows use columns such as:
 
