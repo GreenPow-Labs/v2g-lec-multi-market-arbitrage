@@ -1,6 +1,6 @@
 # DRJ MultiYear v13 execution archive
 
-The simulation results are intended for public release as a separate dataset so reviewers can inspect all 72 executed runs. The archive is prepared for Zenodo, rather than stored in this Git repository; it has not yet been deposited publicly. The exact archive filename, size, and checksum are listed in [`DRJ_V13_ARCHIVE_SHA256SUMS`](DRJ_V13_ARCHIVE_SHA256SUMS).
+The simulation results are publicly available so reviewers can inspect all 72 executed runs. Download the archive from the [v13-results GitHub Release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). It is a release asset rather than a Git-history file. A separate Zenodo deposit has not yet been made. The exact archive filename, size, and checksum are listed in [`DRJ_V13_ARCHIVE_SHA256SUMS`](DRJ_V13_ARCHIVE_SHA256SUMS).
 
 ## Contents
 
@@ -23,4 +23,4 @@ sha256sum --check docs/DRJ_V13_ARCHIVE_SHA256SUMS
 unzip -t DRJ_MultiYear_v13_executed_logs.zip
 ```
 
-After the dataset is deposited, update this document and the README with its public DOI and download instructions. The repository README links to this dataset plan; the actual archive remains a separate download.
+If a Zenodo deposit is made later, add its DOI here and in the README. The current public download is the GitHub Release asset.

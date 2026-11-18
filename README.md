@@ -4,7 +4,7 @@ This is a code-only review candidate extracted from a private research repositor
 
 ## Executed PLEXOS archive
 
-The 72-run v13 simulation results are intended for public release as a separate Zenodo dataset because the archive is approximately 200 MB. The archive is prepared but **not yet publicly deposited**; it is not stored in this GitHub repository. See [archive release notes](docs/DRJ_V13_ARCHIVE_RELEASE_NOTES.md) and [SHA-256 checksum](docs/DRJ_V13_ARCHIVE_SHA256SUMS). The companion post-processing pipeline required to regenerate all paper tables and figures is not included in this minimal release.
+The 72-run v13 simulation results are intended for public release as a separate Zenodo dataset because the archive is approximately 200 MB. The archive is available as the [v13-results GitHub Release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results); it is attached as a release asset rather than committed to Git history. A separate Zenodo deposit has not been made. See [archive release notes](docs/DRJ_V13_ARCHIVE_RELEASE_NOTES.md) and [SHA-256 checksum](docs/DRJ_V13_ARCHIVE_SHA256SUMS). The companion post-processing pipeline required to regenerate all paper tables and figures is not included in this minimal release.
 
 ## Repository boundary
 
