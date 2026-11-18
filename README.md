@@ -14,7 +14,7 @@ At GreenPow Labs, this work sits within research on energy-aware optimization ac
 
 ## Research collaboration
 
-GreenPow Labs welcomes research and industry collaboration on V2G, local energy communities, distributed energy resources, electricity-market optimization, and carbon accounting. Learn more at [greenpow.io](https://www.greenpow.io/).
+GreenPow Labs welcomes research and industry collaboration on V2G, local energy communities, distributed energy resources, electricity-market optimization, and carbon accounting. Learn more at [greenpow.io](https://www.greenpow.io/en/contact).
 
 ## Scope and reproducibility
 
@@ -52,4 +52,4 @@ The functions accept pandas DataFrames and do not download project or third-part
 
 ## Rights and permissions
 
-No license is granted by this repository. All rights are reserved. Contact GreenPow Labs GmbH before reusing or redistributing the code or dataset. Commercial use requires prior written permission. For permission requests, contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/). Third-party materials remain subject to their own terms.
+No license is granted by this repository. All rights are reserved. Contact GreenPow Labs GmbH before reusing or redistributing the code or dataset. Commercial use requires prior written permission. For permission requests, contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/en/contact). Third-party materials remain subject to their own terms.

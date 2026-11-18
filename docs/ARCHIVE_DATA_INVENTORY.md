@@ -27,4 +27,4 @@ The filenames above show imbalance-price series for 2024 and 2025 in the archive
 
 ## Reuse and data rights
 
-This inventory describes what is present; it does not grant permission to reuse it. The repository provides no data license. Contact GreenPow Labs GmbH before reusing or redistributing the dataset; commercial use requires prior written permission. Third-party data remain subject to their source terms. Contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/) with rights questions.
+This inventory describes what is present; it does not grant permission to reuse it. The repository provides no data license. Contact GreenPow Labs GmbH before reusing or redistributing the dataset; commercial use requires prior written permission. Third-party data remain subject to their source terms. Contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/en/contact) with rights questions.
