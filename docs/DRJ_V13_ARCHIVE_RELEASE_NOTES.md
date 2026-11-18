@@ -10,7 +10,9 @@ The compressed archive is 199,572,373 bytes; its extracted contents are about 67
 
 ## Inputs and identifying details
 
-The archive omits the restricted Electricity Maps and Netztransparenz series. The run logs show `[removed]` for computer and user names; hardware specifications remain in the logs. The outputs contain scenario-level EV charging, discharging, and energy series, rather than individual researcher mobility profiles. Model labels and configuration details are included.
+The archive includes EV distance and charging-availability profiles for four modeled EVs, along with demand, renewable-generation, and market-price series. The EV files use vehicle-model labels rather than researcher names. The archive also contains scenario-level EV charging, discharging, and energy results. See the [data inventory](ARCHIVE_DATA_INVENTORY.md) for filenames and coverage.
+
+The archive README identifies omitted restricted inputs: Electricity Maps carbon-intensity data, Netztransparenz ID-AEP data, and 2023 reBAP data. Computer and user names appear as `[removed]` in the run logs; hardware specifications remain. Included third-party datasets may still carry reuse restrictions.
 
 ## What the archive lets you check
 

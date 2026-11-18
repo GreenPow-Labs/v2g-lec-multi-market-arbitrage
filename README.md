@@ -4,9 +4,9 @@ This repository shares a small carbon-accounting module and the executed results
 
 ## Download the simulation results
 
-The 72-run archive is available from the [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). Download `DRJ_MultiYear_v13_executed_logs.zip` there. It is about 200 MB compressed and is attached to the release rather than stored in the Git repository. The archive includes run logs, model configuration, hourly and annual output files, and a file manifest. Electricity Maps and Netztransparenz data are not included.
+The 72-run archive is available from the [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). Download `DRJ_MultiYear_v13_executed_logs.zip` there. It is about 200 MB compressed and is attached to the release rather than stored in the Git repository. Along with the run results, the archive includes model inputs such as EV profiles, demand, renewable-generation, and market-price series. It omits the restricted Electricity Maps and Netztransparenz series listed in the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md).
 
-See the [archive guide](docs/ARCHIVE_GUIDE.md) for help navigating the results, the [paper artifact map](docs/PAPER_ARTIFACT_MAP.md) for links between reported figures/tables and relevant runs, and the [archive release notes](docs/DRJ_V13_ARCHIVE_RELEASE_NOTES.md) for integrity and scope details. There is no separate Zenodo record or DOI yet.
+See the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) for included and omitted datasets, the [archive guide](docs/ARCHIVE_GUIDE.md) for help navigating the results, the [paper artifact map](docs/PAPER_ARTIFACT_MAP.md) for links between reported figures/tables and relevant runs, and the [archive release notes](docs/DRJ_V13_ARCHIVE_RELEASE_NOTES.md) for integrity and scope details. There is no separate Zenodo record or DOI yet.
 
 ## What is in this repository
 

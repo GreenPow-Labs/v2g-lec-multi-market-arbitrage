@@ -39,6 +39,8 @@ The percentages/levels above are encoded in the model index; the physical parame
 
 Each run folder is named `Model <run name> Solution/`. Inspect its `Model ( <run name> ) Log.txt` for solver/run evidence and its `Interval/` CSVs for time-series properties. `Year/` files contain annual aggregates. The class/property names in the CSV filenames identify the PLEXOS object stream; they are not paper KPI names.
 
+For an inventory of the input datasets bundled with the runs, see [Data inventory](ARCHIVE_DATA_INVENTORY.md).
+
 ## Omitted inputs and companion workflow
 
 The archive does not include the restricted Electricity Maps carbon-intensity series or some Netztransparenz ID-AEP/reBAP series. Its README refers to a companion workflow that downloads those inputs and runs `postprocessing/run_all.py`; that workflow is not part of this public repository. You can inspect the archived logs and results, but reproducing all paper calculations requires the missing workflow and access to the restricted inputs.
