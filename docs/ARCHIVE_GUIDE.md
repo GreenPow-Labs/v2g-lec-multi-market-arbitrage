@@ -1,6 +1,6 @@
 # Executed PLEXOS archive guide
 
-This guide summarizes the archive's own `README_runs.md` and its observed top-level structure. The archive is a separate dataset candidate, not part of this code repository.
+Download the archive from the [v13-results GitHub Release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). This guide explains its folder structure and run names. The large ZIP is attached to the release, not stored in Git history.
 
 ## Archive contents
 
@@ -10,7 +10,7 @@ This guide summarizes the archive's own `README_runs.md` and its observed top-le
 - `MANIFEST.csv`: paths, byte sizes, and SHA-256 hashes for archive files.
 - `README_runs.md`: run scope, file overview, and omitted-input notes.
 
-The archive README describes 72 runs across 2023–2025, scenarios A/B/C and optimization/settlement stages, including 2025 sensitivity sweeps. It names PLEXOS 11.000 R05 and Gurobi 12.0.0 as the execution environment.
+The archive README describes 72 runs across 2023–2025: scenarios A/B/C, optimization and settlement stages, and 2025 sensitivity sweeps. It lists PLEXOS 11.000 R05 and Gurobi 12.0.0 as the execution environment.
 
 ## Run naming and index
 
@@ -41,15 +41,15 @@ Each run folder is named `Model <run name> Solution/`. Inspect its `Model ( <run
 
 ## Omitted inputs and companion workflow
 
-The archive README says restricted Electricity Maps carbon-intensity data and some Netztransparenz ID-AEP/reBAP series are not included. It points to a companion repository that downloads the three restricted series and runs `postprocessing/run_all.py`. That companion repository and script are not in this code candidate. The archive's logs/results can be inspected, but reproducing the paper's post-processing from the archive requires the missing workflow and access to any inputs that workflow requires.
+The archive does not include the restricted Electricity Maps carbon-intensity series or some Netztransparenz ID-AEP/reBAP series. Its README refers to a companion workflow that downloads those inputs and runs `postprocessing/run_all.py`; that workflow is not part of this public repository. You can inspect the archived logs and results, but reproducing all paper calculations requires the missing workflow and access to the restricted inputs.
 
 ## Integrity
 
-The separate Zenodo candidate README records the archive's size, SHA-256, and ZIP-integrity check. Verify the checksum against that README before using a downloaded copy. `MANIFEST.csv` provides per-file checksums for inspecting archive contents after extraction.
+The archive size and SHA-256 are recorded in [`DRJ_V13_ARCHIVE_SHA256SUMS`](DRJ_V13_ARCHIVE_SHA256SUMS). Check the downloaded ZIP against that file before extracting it. The archive's `MANIFEST.csv` provides checksums for its individual files.
 
 ## Interpretation cautions
 
 - Executed outputs are evidence of archived model runs, not by themselves a complete reproduction package.
 - A run log or output CSV should be interpreted using the model configuration, scenario/run identifiers, units, and manuscript definitions.
-- The archive's own README reports that computer and user names in logs were replaced. This is contributor-provided provenance, not a substitute for an independent rights or privacy review.
-- The archive is not included in this code candidate and should remain a separate dataset release.
+- The run logs show `[removed]` in the computer-name and user-name fields; hardware details remain. This describes what was observed in the supplied archive, not a broader legal or privacy review.
+- The archive is attached to the GitHub release and remains separate from the source-code history.

@@ -1,28 +1,31 @@
-# Reproducibility and review limits
+# Reproducing the paper: available materials and limits
 
-## What is available here
+## Materials available here
 
-- The study-specific dataframe accounting module `src/emissions_accounting.py`.
-- A dependency file and a partial input schema.
-- A separate executed-run archive candidate described in [Archive guide](ARCHIVE_GUIDE.md).
-- The supplied manuscript, used to prepare [the paper artifact map](PAPER_ARTIFACT_MAP.md), is not included in this code candidate.
+- `src/emissions_accounting.py`, a study-specific module that works with pandas DataFrames.
+- A dependency list and a partial description of the module's input columns.
+- The separate [v13 simulation archive](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results), containing the executed PLEXOS runs and their outputs.
+- A [paper artifact map](PAPER_ARTIFACT_MAP.md) that points readers to runs relevant to reported tables and figures.
 
-## What this candidate can support
+The manuscript itself and the complete collaboration repository are not included.
 
-A reviewer can read the accounting implementation, inspect its expected fields, and assess archived PLEXOS output files if they have the separate dataset. With caller-supplied, independently cleared input data, the accounting functions can be invoked as dataframe transformations.
+## What you can do
 
-## What this candidate cannot reproduce
+You can read the accounting code, inspect its expected columns, and review the archived model configurations, logs, and result files. You can also call the dataframe functions with inputs you are permitted to use.
 
-- It does not contain or run the complete PLEXOS post-processing pipeline referenced by the archive README (`postprocessing/run_all.py`).
-- It cannot regenerate all paper tables, KPIs, or figures from the archived runs on its own.
-- It does not include the restricted Electricity Maps or Netztransparenz time series named in the archive README.
-- It does not provide the paper's full model input preparation and figure-generation workflow.
-- No results in this candidate establish numerical parity against the paper or validate the PLEXOS simulations.
+## What you cannot reproduce from this release alone
 
-## Existing verification scope
+- The complete PLEXOS post-processing workflow (`postprocessing/run_all.py`) is not included.
+- The restricted Electricity Maps and Netztransparenz input series are not included.
+- The model input preparation and figure-generation workflow is incomplete here.
+- Therefore, this release cannot regenerate all reported KPIs, tables, and figures or independently confirm their numerical agreement with the paper.
 
-The accounting module was syntax-compiled during candidate preparation. That is a syntax check only. This candidate does not include numerical unit/regression tests or a clean-environment end-to-end run. Do not describe it as fully validated or fully reproducible.
+The archive documents executed runs. Inspecting those files is not the same as rerunning the model or reproducing the paper's analysis.
 
-## Data boundary
+## Verification completed
 
-Do not add licensed time series, researcher-specific mobility profiles, personal or confidential data, or derived outputs unless their redistribution is explicitly cleared. A transformed or aggregated value is not automatically free of source-data restrictions.
+The accounting module was syntax-compiled during preparation. That only checks that Python can parse the file; it does not verify numerical results. This release has no included regression tests or full clean-environment reproduction run.
+
+## Data boundaries
+
+Do not add licensed time series, personal or confidential information, or derived results unless redistribution is cleared. Aggregating or transforming a dataset does not automatically remove its source restrictions.
