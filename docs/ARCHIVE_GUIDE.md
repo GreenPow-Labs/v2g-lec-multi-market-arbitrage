@@ -41,9 +41,11 @@ Each run folder is named `Model <run name> Solution/`. Inspect its `Model ( <run
 
 For an inventory of the input datasets bundled with the runs, see [Data inventory](ARCHIVE_DATA_INVENTORY.md).
 
-## Omitted inputs and companion workflow
+## Omitted inputs and source workflow
 
-The archive does not include the restricted Electricity Maps carbon-intensity series or some Netztransparenz ID-AEP/reBAP series. Its README refers to a companion workflow that downloads those inputs and runs `postprocessing/run_all.py`; that workflow is not part of this public repository. You can inspect the archived logs and results, but reproducing all paper calculations requires the missing workflow and access to the restricted inputs.
+The full source workflow is included in this repository under [`reproduction/`](../reproduction/), including `postprocessing/run_all.py`. The run archive itself contains the executed simulations and run checks; the source scripts and generated analysis tables/figures are in `reproduction/`.
+
+The archive omits Electricity Maps carbon-intensity data and Netztransparenz ID-AEP for 2023–2025 and reBAP for 2023. Obtain these inputs from their providers under the applicable access and use terms before attempting to regenerate the full analysis. See the [data inventory](ARCHIVE_DATA_INVENTORY.md) and [reproduction guide](../reproduction/README.md).
 
 ## Integrity
 

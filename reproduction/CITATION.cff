@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this model, data or code, please cite the paper."
+title: "Multi-Pricing Arbitrage Potential for V2G Demand Response Services in Local Energy Communities: model, data and analysis"
+authors:
+  - family-names: Maldonato
+    given-names: Francesco
+  - family-names: Ruilova
+    given-names: Federico
+  - family-names: Noori
+    given-names: Mahtab
+  - family-names: Azizkhani
+    given-names: Mohammad
+  - family-names: Göhlich
+    given-names: Dietmar
+preferred-citation:
+  type: article
+  title: "Multi-Pricing Arbitrage Potential for V2G Demand Response Services in Local Energy Communities"
+  authors:
+    - family-names: Maldonato
+      given-names: Francesco
+    - family-names: Ruilova
+      given-names: Federico
+    - family-names: Noori
+      given-names: Mahtab
+    - family-names: Azizkhani
+      given-names: Mohammad
+    - family-names: Göhlich
+      given-names: Dietmar
+  journal: "IEEE Access"
+  status: submitted

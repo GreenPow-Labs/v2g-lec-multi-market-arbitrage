@@ -1,0 +1,32 @@
+;;max |imbalance - expected| [kW];PLEXOS imbalance revenue [EUR];ex-post imbalance revenue [EUR]
+A.2;2023;0.00856;-1738.23;-1738.23
+A.2;2024;0.00909;-2182.92;-2182.93
+A.2;2025;2e-05;-1241.89;-1241.89
+B.2;2023;0.00856;-1738.23;-1738.23
+B.2;2024;0.00909;-2182.92;-2182.93
+B.2;2025;2.002e-05;-1241.89;-1241.89
+C.2;2023;0.00856;-1738.23;-1738.23
+C.2;2024;0.00909;-2182.92;-2182.93
+C.2;2025;0.0028;-1241.89;-1241.89
+EV fleet [EVs];50;0.00791;-1241.89;-1241.89
+EV fleet [EVs];75;0.00209;-1241.89;-1241.89
+EV fleet [EVs];100;0.0028;-1241.89;-1241.89
+EV fleet [EVs];150;3.001e-05;-1241.89;-1241.89
+EV fleet [EVs];200;0.00978;-1241.89;-1241.89
+EV fleet [EVs];400;2.999e-05;-1241.89;-1241.89
+RES capacity [% penetration];40;0.00376;-694.601;-694.601
+RES capacity [% penetration];60;2.003e-05;-967.348;-967.348
+RES capacity [% penetration];80;0.0028;-1241.89;-1241.89
+RES capacity [% penetration];100;0.00867;-1517.45;-1517.45
+RES capacity [% penetration];120;3e-05;-1793.67;-1793.67
+Load with RES [% of base load];50;0.008;-620.946;-620.946
+Load with RES [% of base load];75;2.002e-05;-931.417;-931.418
+Load with RES [% of base load];100;0.0028;-1241.89;-1241.89
+Load with RES [% of base load];150;2.002e-05;-1862.83;-1862.83
+Load with RES [% of base load];200;2.004e-05;-2483.78;-2483.78
+Fleet mix [% residents];0;0.00771;-1241.89;-1241.89
+Fleet mix [% residents];25;2.002e-05;-1241.89;-1241.89
+Fleet mix [% residents];50;2.999e-05;-1241.89;-1241.89
+Fleet mix [% residents];65;0.0028;-1241.89;-1241.89
+Fleet mix [% residents];75;0.00989;-1241.89;-1241.89
+Fleet mix [% residents];100;3e-05;-1241.89;-1241.89

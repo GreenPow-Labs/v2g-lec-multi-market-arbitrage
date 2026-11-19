@@ -1,31 +1,24 @@
-# Reproducing the paper: available materials and limits
+# Reproducing the study
 
-## Materials available here
+## Materials in this repository
 
-- `src/emissions_accounting.py`, a study-specific module that works with pandas DataFrames.
-- A dependency list and a partial description of the module's input columns.
-- The separate [v13 simulation archive](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results), containing the executed PLEXOS runs and their outputs.
-- A [paper artifact map](PAPER_ARTIFACT_MAP.md) that points readers to runs relevant to reported tables and figures.
+The repository now includes the full analysis source tree under [`reproduction/`](../reproduction/): source input files included in the project, input-preparation scripts, fitted EV-profile inputs and generator, the PLEXOS model and checks, post-processing and figure scripts, and the CSV/PDF results.
 
-The manuscript itself and the complete collaboration repository are not included.
+The separate [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results) contains the 72 executed PLEXOS runs, logs, solution databases, and associated run files. Follow [`reproduction/README.md`](../reproduction/README.md) for download commands, checksums, dependencies, and workflow order.
 
-## What you can do
+## What can be rerun
 
-You can read the accounting code, inspect its expected columns, and review the archived model configurations, logs, and result files. You can also call the dataframe functions with inputs you are permitted to use.
+- **Post-processing:** after downloading and unpacking the run archive and obtaining the restricted inputs listed below, run `reproduction/postprocessing/run_all.py` to regenerate KPI tables and figures under `reproduction/results/`.
+- **Input preparation and EV profiles:** scripts and fitted EV-profile distributions are included. The source Straub trip records used to fit the distributions are not included, so that original fitting step cannot be independently repeated from this repository.
+- **Model build and validation:** model-generation and check scripts are included. The execution checks operate on the archived runs.
+- **PLEXOS simulations:** rebuilding and executing the model requires PLEXOS 11 and Gurobi. The executed runs in the release let readers inspect results without those tools.
 
-## What you cannot reproduce from this release alone
+The study README records expected check outputs and the clean-copy reproduction procedure reported by the maintainers. This repository snapshot has not been independently rerun as part of this documentation update.
 
-- The complete PLEXOS post-processing workflow (`postprocessing/run_all.py`) is not included.
-- The restricted Electricity Maps and Netztransparenz input series are not included.
-- The model input preparation and figure-generation workflow is incomplete here.
-- Therefore, this release cannot regenerate all reported KPIs, tables, and figures or independently confirm their numerical agreement with the paper.
+## Restricted inputs
 
-The archive documents executed runs. Inspecting those files is not the same as rerunning the model or reproducing the paper's analysis.
+The repository and run archive omit Electricity Maps carbon-intensity data, Netztransparenz ID-AEP series for 2023–2025, and the 2023 Netztransparenz reBAP series. Users must obtain these directly under the providers' access and use terms. See [data inventory](ARCHIVE_DATA_INVENTORY.md) and `reproduction/preprocessing/fetch_restricted_inputs.py`.
 
-## Verification completed
+## Interpretation
 
-The accounting module was syntax-compiled during preparation. That only checks that Python can parse the file; it does not verify numerical results. This release has no included regression tests or full clean-environment reproduction run.
-
-## Data boundaries
-
-Do not add licensed time series, personal or confidential information, or derived results unless redistribution is cleared. Aggregating or transforming a dataset does not automatically remove its source restrictions.
+The archive documents executed runs; inspecting those files is not the same as rerunning PLEXOS. Recreating the full analysis also depends on access to the restricted inputs and the versions of software and data described in `reproduction/README.md`. Scenario C assumes the intraday price index is known in advance and represents an upper bound rather than a forecast-based operating result.

@@ -2,54 +2,38 @@
 
 ### GreenPow Labs research | Berlin, Germany
 
-**How can local energy communities coordinate renewable generation, stationary storage, and electric vehicles to provide flexibility across electricity markets?**
+How can a local energy community coordinate renewable generation, stationary storage, and electric vehicles across electricity markets? This repository provides the study code, input preparation, EV-profile generation, PLEXOS model files, post-processing scripts, analysis outputs reported in the manuscript, and 72 executed PLEXOS runs for a Berlin-area V2G demand-response study.
 
-This repository shares selected research code and 72 executed simulation runs for a study of vehicle-to-grid (V2G) demand response in a Berlin-area local energy community. The study compares smart charging and bidirectional EV charging in day-ahead and intraday markets, and examines settlement, battery operation, and carbon accounting. It connects distributed energy resources, electricity-market optimization, energy storage, and emissions attribution.
+The study compares smart charging and bidirectional EV charging in day-ahead and intraday markets, with settlement against actual conditions. It connects distributed energy resources, electricity-market optimization, energy storage, and carbon accounting. Scenario C assumes advance knowledge of the intraday price index and is an upper-bound case, not a forecast-based operating result. See the [study overview](docs/STUDY_OVERVIEW.md) for assumptions and manuscript-reported findings.
 
-The related pre-final manuscript, “Multi-Pricing Arbitrage Potential for V2G Demand Response Services in Local Energy Communities,” lists Federico Ruilova's affiliation as GreenPow Labs. See the [study overview](docs/STUDY_OVERVIEW.md) for the research question, scenarios, and reported findings.
+## What is included
 
-## Why this research matters
+| Location | Contents |
+|---|---|
+| [`src/`](src/) | DataFrame utilities for emissions accounting. |
+| [`reproduction/data/`](reproduction/data/) | Source market, renewable-generation, and standard-load-profile datasets; review the provider terms before reuse. |
+| [`reproduction/preprocessing/`](reproduction/preprocessing/) | Input preparation, restricted-input retrieval helpers, and EV-profile generation and analysis. |
+| [`reproduction/model/DRJ_MultiYear_v13/`](reproduction/model/DRJ_MultiYear_v13/) | PLEXOS model, 2023–2025 model inputs, model-building tools, and run checks. |
+| [`reproduction/postprocessing/`](reproduction/postprocessing/) | KPI extraction, analysis, and figure-generation scripts. |
+| [`reproduction/results/`](reproduction/results/) | CSV analysis tables and PDF figures generated for the manuscript. |
+| [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results) | `DRJ_MultiYear_v13_executed_logs.zip`: the 72 executed runs, run outputs, solution databases, logs, and run-check materials. SHA-256: `495575ab480ace683792cb504d4c82277bdfe4b0189947f1bd4646b4d8f71b93`. |
 
-At GreenPow Labs, this work sits within research on energy-aware optimization across energy systems and distributed infrastructure. The study contributes a case for examining how flexible demand and storage can respond to market conditions, and how cost-oriented operation relates to carbon accounting. It does not evaluate computing workloads or establish computing-performance results.
+The full directory map, paper-to-output mapping, environment requirements, and command-by-command instructions are in the [`reproduction README`](reproduction/README.md). Start with the [reproducibility guide](docs/REPRODUCIBILITY.md), then use the [archive guide](docs/ARCHIVE_GUIDE.md) to inspect the 72-run release.
 
-## Research collaboration
+## Reproducing the analysis
 
-GreenPow Labs welcomes research and industry collaboration on V2G, local energy communities, distributed energy resources, electricity-market optimization, and carbon accounting. Learn more at [greenpow.io](https://www.greenpow.io/en/contact).
+The post-processing scripts use the archived PLEXOS runs and write analysis tables and figures under `reproduction/results/`. Some restricted inputs must first be obtained from their providers; see the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) and the detailed reproduction steps. Rebuilding the model and running PLEXOS require PLEXOS 11 and Gurobi. The source trip records used to fit the EV mobility distributions are not included; the fitted distributions and generated simulation profiles are provided.
 
-## Scope and reproducibility
+The [paper artifact map](docs/PAPER_ARTIFACT_MAP.md) links manuscript tables and figures to output files and scripts. The archive is a record of executed simulations; it is distinct from rerunning the model or regenerating the analysis.
 
-This is a selected research release: it provides code and archived simulation artifacts, but not the complete analysis workflow needed to regenerate every result reported in the manuscript. The numerical findings described in the study overview are manuscript-reported results, not independently regenerated by this repository. Scenario C assumes advance knowledge of the intraday price index and should be read as an upper-bound case, not a forecast-based operating result. See [reproducibility notes](docs/REPRODUCIBILITY.md) for details.
+## Research and collaboration
 
-## Download the simulation results
+At GreenPow Labs, this work contributes to research on energy-aware optimization across energy systems and distributed infrastructure. The study examines flexible demand, storage, electricity-market operation, and carbon accounting. It does not evaluate computing workloads or establish computing-performance results. For collaboration inquiries, visit the [GreenPow contact page](https://www.greenpow.io/en/contact).
 
-The 72-run archive is available from the [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). Download `DRJ_MultiYear_v13_executed_logs.zip` there. It is about 200 MB compressed and is attached to the release rather than stored in the Git repository. Along with the run results, the archive includes model inputs such as EV profiles, demand, renewable-generation, and market-price series. It omits the restricted Electricity Maps and Netztransparenz series listed in the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md).
+## Citation
 
-See the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) for included and omitted datasets, the [archive guide](docs/ARCHIVE_GUIDE.md) for help navigating the results, the [paper artifact map](docs/PAPER_ARTIFACT_MAP.md) for links between reported figures/tables and relevant runs, and the [archive release notes](docs/DRJ_V13_ARCHIVE_RELEASE_NOTES.md) for integrity and scope details. There is no separate Zenodo record or DOI yet.
-
-## What is in this repository
-
-- [`src/emissions_accounting.py`](src/emissions_accounting.py): dataframe functions for emissions accounting and related summaries.
-- [`requirements.txt`](requirements.txt): Python dependencies.
-- [`docs/INPUT_SCHEMA.md`](docs/INPUT_SCHEMA.md): input columns used by the accounting functions.
-- [`docs/CARBON_ACCOUNTING_GUIDE.md`](docs/CARBON_ACCOUNTING_GUIDE.md): a synthetic example, units, function guide, and accounting boundaries.
-- [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md): what can be reviewed or rerun from the available materials.
-- [`docs/STUDY_OVERVIEW.md`](docs/STUDY_OVERVIEW.md): research question, scope, and relation to the paper.
-- [`CITATION.cff`](CITATION.cff): citation metadata for this repository.
-
-This is a partial release. The companion post-processing workflow, including `postprocessing/run_all.py`, is not included. As a result, the archive and code here do not reproduce all paper KPIs, tables, or figures. The archive lets you inspect the executed simulation outputs, but the paper results have not been regenerated from the files in this release.
-
-## Use the accounting module
-
-Python 3.10 or newer is recommended:
-
-```bash
-python -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-```
-
-The functions accept pandas DataFrames and do not download project or third-party data. Start with the [synthetic example](docs/CARBON_ACCOUNTING_GUIDE.md), then check the [input schema](docs/INPUT_SCHEMA.md) and function definitions for exact fields and units. Provide only data you are entitled to use and share.
+Repository citation metadata are in [`CITATION.cff`](CITATION.cff). The paper is the source to cite for the scientific findings; update its bibliography details when the final publication citation is available.
 
 ## Rights and permissions
 
-No license is granted by this repository. All rights are reserved. Contact GreenPow Labs GmbH before reusing or redistributing the code or dataset. Commercial use requires prior written permission. For permission requests, contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/en/contact). Third-party materials remain subject to their own terms.
+No general license is granted for this repository. All rights are reserved for GreenPow Labs materials; commercial reuse requires prior written permission from GreenPow Labs. Third-party software and datasets remain subject to their own terms, and this repository does not grant rights to those materials. See the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) before reusing any input data.

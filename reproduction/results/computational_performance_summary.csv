@@ -1,0 +1,5 @@
+kind;set;model wall time [s] sum;model wall time [s] mean;model wall time [s] max;solver time [s] mean;solver time [s] max;solver time per step [s] mean;solver time per step [s] max;relative gap [%] mean;relative gap [%] max;absolute gap [EUR] max;infeasibilities sum;peak memory [MB] max;steps max;model count;max columns per step max;max integers per step max;max rows per step max;max non-zeros per step max;step solve time mean [s] mean;step solve time max [s] max;step final gap max [%] max;steps not optimal sum
+optimisation (X.1);2025 sweeps;973.3;27.04;31.6;20.9;25.8;0.1727;0.2132;0.0007194;0.0191;0.1133;0;559.8;121;36;9581;360;11256;23352;0.1647;0.4847;0.0099;0
+optimisation (X.1);years 2023-2025;245.9;27.32;37.9;19.53;28.5;0.1614;0.2355;0.0011;0.0037;2.646;0;552.4;121;9;9581;360;11256;23352;0.1536;0.791;0.0099;0
+settlement (X.2);2025 sweeps;125.3;6.961;11.8;1.328;2.2;0.01097;0.01818;;;;0;559.8;121;18;3893;0;5112;9720;0.007264;0.0408;;0
+settlement (X.2);years 2023-2025;62.7;6.967;10.4;1.3;2;0.01074;0.01653;;;;0;552.4;121;9;3893;0;5112;9720;0.006825;0.0444;;0

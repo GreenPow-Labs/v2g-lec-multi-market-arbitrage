@@ -1,0 +1,7 @@
+# Python >= 3.11 (tested with 3.13): preprocessing/prepare_inputs.py, fetch_restricted_inputs.py and postprocessing/
+numpy>=2.0
+pandas>=2.2,<3
+scipy>=1.13
+matplotlib>=3.8
+openpyxl>=3.1    # reads the standard load profiles (.xlsx)
+requests>=2.31   # fetch_restricted_inputs.py

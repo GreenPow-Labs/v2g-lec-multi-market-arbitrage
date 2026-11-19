@@ -1,0 +1,33 @@
+;A;B;C
+throughput, battery side [kWh];3882.021;7875.051;9841.454
+EFC [-];23.671;48.019;60.009
+of which V2G EFC [-];0.000;24.341;36.282
+rainflow EFC [-];20.723;43.868;55.570
+rainflow cycles [-];349.717;401.613;504.162
+DoD p50 [%];1.697;2.100;1.804
+DoD max [%];56.783;79.567;79.026
+mean SoC [%];24.879;38.709;40.388
+time at SoC > 80 % [%];0.052;8.704;8.047
+C-rate p95 when active [1/h];0.089;0.102;0.106
+C-rate max [1/h];0.110;0.113;0.115
+degradation cost, NMC 2000 EFC [EUR/EV];109.667;222.470;278.021
+degradation cost, NMC 3000 EFC [EUR/EV];73.111;148.313;185.347
+degradation cost, NMC 4000 EFC [EUR/EV];54.834;111.235;139.011
+gain vs V1G [EUR/EV];0.000;85.199;419.313
+gain vs V1G incl. UoS [EUR/EV];-0.000;5.143;299.823
+extra throughput vs V1G [kWh];0.000;3993.030;5959.433
+break-even degradation factor [ct/kWh];;2.134;7.036
+break-even degradation factor incl. UoS [ct/kWh];;0.129;5.031
+wear cost, paper (NMC 3000 EFC) [EUR/EV];73.111;148.313;185.347
+added wear vs V1G (NMC 3000 EFC) [EUR/EV];0.000;75.202;112.236
+capacity loss of the V2G cycles, 2000 EFC life [pp/a];0.000;0.243;0.363
+capacity loss of the V2G cycles, 3000 EFC life [pp/a];0.000;0.162;0.242
+capacity loss of the V2G cycles, 4000 EFC life [pp/a];0.000;0.122;0.181
+EFC after 10 years [-];236.709;480.186;600.089
+share of 2000-EFC cycle life used in 10 years [%];11.835;24.009;30.004
+share of 3000-EFC cycle life used in 10 years [%];7.890;16.006;20.003
+share of 4000-EFC cycle life used in 10 years [%];5.918;12.005;15.002
+EFC after 15 years [-];355.063;720.279;900.133
+share of 2000-EFC cycle life used in 15 years [%];17.753;36.014;45.007
+share of 3000-EFC cycle life used in 15 years [%];11.835;24.009;30.004
+share of 4000-EFC cycle life used in 15 years [%];8.877;18.007;22.503

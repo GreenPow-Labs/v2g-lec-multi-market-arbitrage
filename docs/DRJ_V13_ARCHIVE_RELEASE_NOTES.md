@@ -1,6 +1,6 @@
 # DRJ MultiYear v13 simulation archive
 
-The archive contains the outputs from all 72 executed PLEXOS runs. Download `DRJ_MultiYear_v13_executed_logs.zip` from the [v13-results GitHub Release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). The archive is attached to the release so the large file does not live in Git history. A separate Zenodo deposit and DOI are not available yet.
+The archive contains the outputs from all 72 executed PLEXOS runs. Download `DRJ_MultiYear_v13_executed_logs.zip` from the [v13-results GitHub Release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results). The archive is attached to the release so the large file does not live in Git history. The source code and analysis workflow are included in the repository under `reproduction/`; the run archive remains a separate GitHub release asset.
 
 ## What is included
 
@@ -16,7 +16,7 @@ The archive README identifies omitted restricted inputs: Electricity Maps carbon
 
 ## What the archive lets you check
 
-You can inspect the executed run outputs, logs, and model configurations. The archive does not include the companion repository's `postprocessing/run_all.py` workflow or the restricted input series, so it cannot regenerate all paper KPIs, tables, and figures by itself. See the [archive guide](ARCHIVE_GUIDE.md), [paper artifact map](PAPER_ARTIFACT_MAP.md), and [reproducibility notes](REPRODUCIBILITY.md) for more detail.
+The archive provides the executed run outputs, logs, model configurations, and run-check scripts. The source repository now includes `reproduction/postprocessing/run_all.py` and the paper-analysis scripts. Regenerating the full analysis still requires the restricted input series described in the [data inventory](ARCHIVE_DATA_INVENTORY.md). See the [archive guide](ARCHIVE_GUIDE.md), [paper artifact map](PAPER_ARTIFACT_MAP.md), and [reproducibility notes](REPRODUCIBILITY.md).
 
 ## Verify the download
 

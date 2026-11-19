@@ -15,10 +15,10 @@ contact:
     affiliation: "GreenPow Labs GmbH"
     orcid: "https://orcid.org/0000-0002-3577-2065"
 abstract: >-
-  Research code and 72 executed PLEXOS runs accompanying a study of vehicle-to-grid
-  demand response in local energy communities. The repository includes carbon-accounting
-  functions and simulation inputs and outputs, but not the complete workflow for
-  regenerating every paper table and figure.
+  Research code, data-processing and EV-profile generation workflows, PLEXOS model
+  files, analysis outputs, and 72 executed runs accompanying a study of vehicle-to-grid
+  demand response in local energy communities. Some restricted market and carbon-intensity
+  inputs are not included and must be obtained from their providers.
 url: "https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage"
 repository-code: "https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage"
 keywords:

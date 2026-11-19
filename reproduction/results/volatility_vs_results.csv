@@ -1,0 +1,4 @@
+year;day-ahead mean daily 4-h spread [EUR/MWh];day-ahead std [EUR/MWh];intraday mean daily 4-h spread [EUR/MWh];intraday std [EUR/MWh];imbalance mean daily 4-h spread [EUR/MWh];imbalance std [EUR/MWh];B: gain vs V1G [EUR/EV];B: V2G per EV [kWh];C: gain vs V1G [EUR/EV];C: V2G per EV [kWh]
+2023;80.113;47.380;132.227;87.216;283.381;191.057;51.690;1338.929;338.904;2888.372
+2024;88.453;52.495;145.323;154.800;261.564;237.834;105.520;1814.676;571.237;2408.445
+2025;100.231;51.745;134.254;89.201;177.717;111.250;98.387;2431.528;347.799;3028.304

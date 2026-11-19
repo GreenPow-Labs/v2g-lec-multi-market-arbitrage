@@ -1,0 +1,31 @@
+year;pair;Pearson r;Spearman rho
+2023;day-ahead / intraday;0.511;0.733
+2023;day-ahead / imbalance;0.267;0.420
+2023;intraday / imbalance;0.604;0.656
+2023;day-ahead / carbon intensity;0.759;0.828
+2023;day-ahead / solar CF;-0.294;-0.146
+2023;day-ahead / wind CF;-0.409;-0.395
+2023;day-ahead / residual load;0.580;0.646
+2023;imbalance / RES forecast error;-0.035;-0.077
+2023;carbon intensity / residual load;0.665;0.723
+2023;EV availability / residual load;-0.143;-0.180
+2024;day-ahead / intraday;0.370;0.739
+2024;day-ahead / imbalance;0.277;0.466
+2024;intraday / imbalance;0.896;0.687
+2024;day-ahead / carbon intensity;0.651;0.777
+2024;day-ahead / solar CF;-0.386;-0.243
+2024;day-ahead / wind CF;-0.295;-0.351
+2024;day-ahead / residual load;0.610;0.700
+2024;imbalance / RES forecast error;-0.094;-0.185
+2024;carbon intensity / residual load;0.724;0.759
+2024;EV availability / residual load;-0.115;-0.158
+2025;day-ahead / intraday;0.551;0.758
+2025;day-ahead / imbalance;0.468;0.611
+2025;intraday / imbalance;0.915;0.846
+2025;day-ahead / carbon intensity;0.686;0.738
+2025;day-ahead / solar CF;-0.521;-0.334
+2025;day-ahead / wind CF;-0.269;-0.284
+2025;day-ahead / residual load;0.712;0.758
+2025;imbalance / RES forecast error;-0.063;-0.154
+2025;carbon intensity / residual load;0.674;0.706
+2025;EV availability / residual load;-0.173;-0.223

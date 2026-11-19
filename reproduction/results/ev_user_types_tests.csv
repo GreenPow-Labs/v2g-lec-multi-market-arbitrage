@@ -1,0 +1,31 @@
+scenario;year;test;statistic;annual difference [EUR/EV];95% CI low;95% CI high;p;p (Holm);days with a positive difference [%]
+B;2023;Friedman, four user types (paired by day);26.17;;;;8.801e-06;8.801e-06;
+B;2023;"residents - employees (paired by day; Wilcoxon signed-rank)";2.89e+04;56.52;27.79;87.29;0.0988;0.2964;50.41
+B;2023;"RO - RC (paired by day; Wilcoxon signed-rank)";2.111e+04;56.69;34.1;79.88;3.509e-06;1.403e-05;61.43
+B;2023;"WF - WP (paired by day; Wilcoxon signed-rank)";2.286e+04;9.141;-3.697;22.58;0.1793;0.3585;44.63
+B;2023;"RC - WF (paired by day; Wilcoxon signed-rank)";2.784e+04;23.61;-3.252;50.09;0.59;0.59;45.73
+B;2024;Friedman, four user types (paired by day);21.19;;;;9.622e-05;9.622e-05;
+B;2024;"residents - employees (paired by day; Wilcoxon signed-rank)";2.678e+04;107.6;62.54;161;0.006274;0.01882;52.62
+B;2024;"RO - RC (paired by day; Wilcoxon signed-rank)";2.031e+04;86.34;52.58;126.3;2.751e-07;1.1e-06;60.61
+B;2024;"WF - WP (paired by day; Wilcoxon signed-rank)";2.568e+04;22.83;5.439;45.1;0.08226;0.1645;46.56
+B;2024;"RC - WF (paired by day; Wilcoxon signed-rank)";2.801e+04;53.04;19.21;93.75;0.09263;0.1645;51.24
+B;2025;Friedman, four user types (paired by day);36.09;;;;7.173e-08;7.173e-08;
+B;2025;"residents - employees (paired by day; Wilcoxon signed-rank)";2.426e+04;117;80.83;159.7;0.0002055;0.0006165;54.55
+B;2025;"RO - RC (paired by day; Wilcoxon signed-rank)";1.952e+04;98.38;74.9;127.9;1.748e-08;6.991e-08;61.16
+B;2025;"WF - WP (paired by day; Wilcoxon signed-rank)";2.282e+04;22.36;7.566;39.04;0.02461;0.04923;47.93
+B;2025;"RC - WF (paired by day; Wilcoxon signed-rank)";2.591e+04;56.61;25.88;89.77;0.05109;0.05109;50.96
+C;2023;Friedman, four user types (paired by day);70.53;;;;3.281e-15;3.281e-15;
+C;2023;"residents - employees (paired by day; Wilcoxon signed-rank)";2.056e+04;343.4;246.1;473.3;4.589e-10;1.377e-09;62.53
+C;2023;"RO - RC (paired by day; Wilcoxon signed-rank)";1.943e+04;169.2;132.7;207.6;1.371e-10;5.484e-10;65.56
+C;2023;"WF - WP (paired by day; Wilcoxon signed-rank)";2.326e+04;52.82;31.35;74.33;1.635e-05;3.27e-05;58.68
+C;2023;"RC - WF (paired by day; Wilcoxon signed-rank)";2.451e+04;232.4;140.8;358.8;5.388e-05;5.388e-05;57.02
+C;2024;Friedman, four user types (paired by day);59.31;;;;8.243e-13;8.243e-13;
+C;2024;"residents - employees (paired by day; Wilcoxon signed-rank)";1.979e+04;507.5;318.4;742.1;5.499e-11;2.2e-10;63.36
+C;2024;"RO - RC (paired by day; Wilcoxon signed-rank)";1.899e+04;257.9;148.3;421.8;2.61e-10;7.83e-10;63.64
+C;2024;"WF - WP (paired by day; Wilcoxon signed-rank)";2.401e+04;80.16;26.13;162.5;0.0001203;0.0001203;57.58
+C;2024;"RC - WF (paired by day; Wilcoxon signed-rank)";2.246e+04;338.5;205.6;501.4;7.923e-07;1.585e-06;58.4
+C;2025;Friedman, four user types (paired by day);64.38;;;;6.803e-14;6.803e-14;
+C;2025;"residents - employees (paired by day; Wilcoxon signed-rank)";2.038e+04;365.1;243.6;511.2;1.32e-09;3.959e-09;61.43
+C;2025;"RO - RC (paired by day; Wilcoxon signed-rank)";1.892e+04;190;140.4;253.3;2.382e-11;9.529e-11;63.64
+C;2025;"WF - WP (paired by day; Wilcoxon signed-rank)";2.362e+04;62.35;39.14;91.72;0.0003316;0.0003316;54.55
+C;2025;"RC - WF (paired by day; Wilcoxon signed-rank)";2.298e+04;238.9;144.2;357.5;1.178e-05;2.356e-05;58.68

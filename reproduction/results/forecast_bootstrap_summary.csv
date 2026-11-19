@@ -1,0 +1,25 @@
+year;scenario;KPI;measured;bootstrap std;bootstrap 2.5 %;bootstrap 97.5 %
+2023;A.2;imbalance revenue [EUR];-1738.2327;773.8184;-3219.5397;-369.5742
+2023;A.2;community energy cost [EUR/MWh];78.3398;2.4415;73.6323;83.1731
+2023;B.2;imbalance revenue [EUR];-1738.2327;773.8184;-3219.5397;-369.5742
+2023;B.2;community energy cost [EUR/MWh];66.7580;2.8438;61.1309;72.1307
+2023;B.2 - A.2;community energy cost [EUR/MWh];-11.6175;1.3975;-14.6307;-9.0540
+2023;C.2;imbalance revenue [EUR];-1738.2327;773.8184;-3219.5397;-369.5742
+2023;C.2;community energy cost [EUR/MWh];5.7806;8.9258;-13.3528;21.5592
+2023;C.2 - A.2;community energy cost [EUR/MWh];-72.8194;8.7731;-90.3703;-57.5907
+2024;A.2;imbalance revenue [EUR];-2182.9259;1145.1416;-4753.4622;-330.9208
+2024;A.2;community energy cost [EUR/MWh];85.4092;2.2582;81.0511;90.1430
+2024;B.2;imbalance revenue [EUR];-2182.9259;1145.1416;-4753.4622;-330.9208
+2024;B.2;community energy cost [EUR/MWh];64.8250;3.9965;56.2733;71.4929
+2024;B.2 - A.2;community energy cost [EUR/MWh];-20.6411;4.2401;-30.3451;-13.9372
+2024;C.2;imbalance revenue [EUR];-2182.9259;1145.1416;-4753.4622;-330.9208
+2024;C.2;community energy cost [EUR/MWh];-5.0096;20.1582;-51.9340;24.6486
+2024;C.2 - A.2;community energy cost [EUR/MWh];-90.4748;21.4076;-139.3437;-59.1426
+2025;A.2;imbalance revenue [EUR];-1241.8875;440.2302;-2132.0336;-347.2476
+2025;A.2;community energy cost [EUR/MWh];86.4556;1.7912;82.7391;89.9030
+2025;B.2;imbalance revenue [EUR];-1241.8875;440.2302;-2132.0336;-347.2476
+2025;B.2;community energy cost [EUR/MWh];63.3910;3.7371;55.5900;69.9988
+2025;B.2 - A.2;community energy cost [EUR/MWh];-23.2165;3.2011;-30.0114;-17.6248
+2025;C.2;imbalance revenue [EUR];-1241.8875;440.2302;-2132.0336;-347.2476
+2025;C.2;community energy cost [EUR/MWh];17.2139;6.9872;2.6245;29.5875
+2025;C.2 - A.2;community energy cost [EUR/MWh];-69.7073;6.7744;-84.1786;-57.4229

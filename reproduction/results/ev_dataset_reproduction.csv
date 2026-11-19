@@ -1,0 +1,9 @@
+;r;sum |diff| [%]
+arrival home, commuter day;0.947;9.037
+departure home, commuter day;0.944;15.845
+arrival home, other use;0.831;15.312
+departure home, other use;0.806;19.486
+arrival work, full day;0.995;4.95
+departure work, full day;0.992;6.457
+arrival work, part day;0.999;3.181
+departure work, part day;0.999;4.101
