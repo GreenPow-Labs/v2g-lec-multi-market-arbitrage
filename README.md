@@ -36,4 +36,4 @@ Repository citation metadata are in [`CITATION.cff`](CITATION.cff). The paper is
 
 ## Rights and permissions
 
-No general license is granted for this repository. All rights are reserved for GreenPow Labs materials; commercial reuse requires prior written permission from GreenPow Labs. Third-party software and datasets remain subject to their own terms, and this repository does not grant rights to those materials. See the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md) before reusing any input data.
+No standard software or data licence is granted. Prior written permission from GreenPow Labs is required before reusing GreenPow Labs materials, including for noncommercial purposes. Third-party materials remain subject to their own terms. See [Rights and permissions](RIGHTS.md) and the [data inventory](docs/ARCHIVE_DATA_INVENTORY.md).

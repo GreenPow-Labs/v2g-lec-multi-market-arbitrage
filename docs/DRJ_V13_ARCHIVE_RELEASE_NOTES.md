@@ -33,4 +33,4 @@ The checksum file is also in this repository at [`docs/DRJ_V13_ARCHIVE_SHA256SUM
 
 ## Reuse
 
-This release grants no license to reuse the archive. Contact GreenPow Labs GmbH before reusing or redistributing it; commercial use requires prior written permission. Contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/en/contact). Third-party materials remain subject to their own terms. This note does not grant rights beyond those terms.
+No standard licence is granted for this archive. Prior written permission from GreenPow Labs GmbH is required before reusing GreenPow Labs materials, including for noncommercial purposes. Third-party materials remain subject to their own terms. See the repository's [Rights and permissions](../RIGHTS.md) notice or contact GreenPow Labs through [greenpow.io](https://www.greenpow.io/en/contact).

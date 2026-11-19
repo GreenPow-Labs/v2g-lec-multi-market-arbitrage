@@ -37,4 +37,4 @@ The source project includes `reproduction/preprocessing/fetch_restricted_inputs.
 
 ## Rights and reuse
 
-This inventory describes file presence; it does not grant reuse rights. No general license is granted for GreenPow Labs materials, and commercial reuse requires prior written permission from GreenPow Labs. Third-party data and software remain subject to their source terms; inclusion in this repository does not relicense those materials. Contact GreenPow Labs through [the company contact form](https://www.greenpow.io/en/contact) with rights questions.
+This inventory describes file presence; it does not grant reuse rights. Prior written permission from GreenPow Labs is required before reusing GreenPow Labs materials, including for noncommercial purposes. Third-party data and software remain subject to their source terms; inclusion in this repository does not relicense those materials. See [Rights and permissions](../RIGHTS.md) or contact GreenPow Labs through [the company contact form](https://www.greenpow.io/en/contact).

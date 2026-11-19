@@ -239,4 +239,4 @@ python3 run_all.py --folder ../model/DRJ_MultiYear_v13
 
 For repository citation metadata, see [`CITATION.cff`](CITATION.cff). Cite the paper for the scientific findings using its final bibliographic details once publication information is available.
 
-No general reuse license is granted for this repository. Commercial reuse of GreenPow Labs materials requires prior written permission from GreenPow Labs. Third-party data and software remain subject to their own terms; the presence of a file here does not override those terms. Contact GreenPow Labs through [the company contact form](https://www.greenpow.io/en/contact) for rights questions.
+No standard software or data licence is granted. Prior written permission from GreenPow Labs is required before reusing GreenPow Labs materials, including for noncommercial purposes. Third-party data and software remain subject to their own terms; the presence of a file here does not override those terms. See the repository's [Rights and permissions](../RIGHTS.md) notice and contact GreenPow Labs through [the company contact form](https://www.greenpow.io/en/contact) for permission requests.
