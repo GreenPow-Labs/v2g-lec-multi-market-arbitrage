@@ -20,12 +20,14 @@ The archive provides the executed run outputs, logs, model configurations, and r
 
 ## Verify the download
 
-From the directory containing the downloaded ZIP, run:
+From the directory containing the downloaded ZIP, point `sha256sum` to the checksum file in your repository checkout (Linux):
 
 ```bash
-sha256sum --check /path/to/DRJ_V13_ARCHIVE_SHA256SUMS
+sha256sum --check /path/to/v2g-lec-multi-market-arbitrage/docs/DRJ_V13_ARCHIVE_SHA256SUMS
 unzip -t DRJ_MultiYear_v13_executed_logs.zip
 ```
+
+On macOS, run `shasum -a 256 DRJ_MultiYear_v13_executed_logs.zip` and compare the printed digest with the value in `docs/DRJ_V13_ARCHIVE_SHA256SUMS`.
 
 The checksum file is also in this repository at [`docs/DRJ_V13_ARCHIVE_SHA256SUMS`](DRJ_V13_ARCHIVE_SHA256SUMS). After extracting the archive, use its `MANIFEST.csv` to check individual files.
 

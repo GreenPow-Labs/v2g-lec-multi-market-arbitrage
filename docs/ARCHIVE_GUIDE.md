@@ -31,11 +31,11 @@ The remaining 54 runs are sensitivity runs: 18 parameter levels, each represente
 | Prefix | Varied factor | Levels encoded in run names |
 |---|---|---|
 | `S-EV` | EV fleet size | 50, 75, 150, 200, 400 EVs |
-| `S-RES` | Renewable capacity | 40%, 60%, 100%, 120% RES penetration labels; `model_overview.csv` gives the corresponding PV/wind capacities |
+| `S-RES` | Renewable capacity | 40%, 60%, 100%, 120% RES penetration; the base case is 80% |
 | `S-LOAD` | Consumer load scaled together with RES | 50, 75, 150, 200 percent of base |
 | `S-MIX` | Residents' share of EV fleet | 0, 25, 50, 75, 100 percent |
 
-The percentages/levels above are encoded in the model index; the physical parameter values for each case are in `model_overview.csv`. For example, the S-RES rows list PV/wind capacities of 0.25/0.10 MW (`S-RES40`), 0.375/0.15 MW (`S-RES60`), 0.625/0.25 MW (`S-RES100`), and 0.75/0.30 MW (`S-RES120`). The manuscript describes a 100-EV base case, 80% RES penetration and 65% resident EV share for Figure 7. Use the index rather than inferring configurations from a folder name alone.
+The RES labels are penetration levels, not percentages of the base-case capacity. The 80% base case has 0.5 MW PV and 0.2 MW wind; the four swept levels correspond to 0.5×, 0.75×, 1.25× and 1.5× of that capacity: 0.25/0.10 MW (`S-RES40`), 0.375/0.15 MW (`S-RES60`), 0.625/0.25 MW (`S-RES100`) and 0.75/0.30 MW (`S-RES120`). The manuscript's Figure 7 base case uses 100 EVs, 80% RES penetration and a 65% resident EV share. Use `model_overview.csv` and `run_order.csv` rather than inferring configurations or dependencies from a folder name alone.
 
 Each run folder is named `Model <run name> Solution/`. Inspect its `Model ( <run name> ) Log.txt` for solver/run evidence and its `Interval/` CSVs for time-series properties. `Year/` files contain annual aggregates. The class/property names in the CSV filenames identify the PLEXOS object stream; they are not paper KPI names.
 

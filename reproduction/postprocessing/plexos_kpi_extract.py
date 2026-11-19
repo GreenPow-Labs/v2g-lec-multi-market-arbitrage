@@ -294,7 +294,7 @@ def main():
         chk.to_csv(out / "settlement_check.csv", sep=";", float_format="%.6g")
         worst = chk["max |imbalance - expected| [kW]"].max()
         gap = (chk["PLEXOS imbalance revenue [EUR]"] - chk["ex-post imbalance revenue [EUR]"]).abs().max()
-        print(f"\nSETTLEMENT CHECK: {len(chk)} settlement runs, max |imbalance - expected| {worst:.3g} kW, "
+        print(f"\nSETTLEMENT CHECK: {len(chk)} check rows, max |imbalance - expected| {worst:.3g} kW, "
               f"max |revenue - ex post| {gap:.3g} EUR")
 
 

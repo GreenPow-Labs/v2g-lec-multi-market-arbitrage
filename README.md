@@ -2,9 +2,9 @@
 
 ### GreenPow Labs research | Berlin, Germany
 
-How can a local energy community coordinate renewable generation, stationary storage, and electric vehicles across electricity markets? This repository provides the study code, input preparation, EV-profile generation, PLEXOS model files, post-processing scripts, analysis outputs reported in the manuscript, and 72 executed PLEXOS runs for a Berlin-area V2G demand-response study.
+How can a local energy community coordinate renewable generation, stationary storage, and electric vehicles across electricity markets? This repository contains the study source code, input-preparation and EV-profile workflows, PLEXOS model files, post-processing scripts, and analysis outputs for a Berlin-area V2G demand-response study. The 72 executed PLEXOS runs are a separate downloadable asset in the [v13-results GitHub Release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results).
 
-The study compares smart charging and bidirectional EV charging in day-ahead and intraday markets, with settlement against actual conditions. It connects distributed energy resources, electricity-market optimization, energy storage, and carbon accounting. Scenario C assumes advance knowledge of the intraday price index and is an upper-bound case, not a forecast-based operating result. See the [study overview](docs/STUDY_OVERVIEW.md) for assumptions and manuscript-reported findings.
+The study compares smart charging and bidirectional EV charging in day-ahead and intraday markets, with settlement against actual conditions. In the manuscript's modeled base case, day-ahead V2G reduces community energy cost by 22%; adding intraday trading gives a 93% modeled reduction and an average €419 annual gain per EV relative to V1G. These are simulation results for German market data from 2023–2025, not guaranteed real-world savings. Scenario C assumes advance knowledge of the intraday price index, so it represents an upper-bound case rather than a forecast-based operating result. See the [study overview](docs/STUDY_OVERVIEW.md) for assumptions and findings.
 
 ## What is included
 
@@ -18,7 +18,7 @@ The study compares smart charging and bidirectional EV charging in day-ahead and
 | [`reproduction/results/`](reproduction/results/) | CSV analysis tables and PDF figures generated for the manuscript. |
 | [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results) | `DRJ_MultiYear_v13_executed_logs.zip`: the 72 executed runs, run outputs, solution databases, logs, and run-check materials. SHA-256: `495575ab480ace683792cb504d4c82277bdfe4b0189947f1bd4646b4d8f71b93`. |
 
-The full directory map, paper-to-output mapping, environment requirements, and command-by-command instructions are in the [`reproduction README`](reproduction/README.md). Start with the [reproducibility guide](docs/REPRODUCIBILITY.md), then use the [archive guide](docs/ARCHIVE_GUIDE.md) to inspect the 72-run release.
+Start with the [`reproduction README`](reproduction/README.md) for the directory map, requirements, and step-by-step instructions. The [reproducibility guide](docs/REPRODUCIBILITY.md) explains what can and cannot be reproduced; the [archive guide](docs/ARCHIVE_GUIDE.md) describes the 72-run release.
 
 ## Reproducing the analysis
 

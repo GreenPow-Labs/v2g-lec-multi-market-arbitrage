@@ -15,8 +15,8 @@ contact:
     affiliation: "GreenPow Labs GmbH"
     orcid: "https://orcid.org/0000-0002-3577-2065"
 abstract: >-
-  Research code, data-processing and EV-profile generation workflows, PLEXOS model
-  files, analysis outputs, and 72 executed runs accompanying a study of vehicle-to-grid
+  Research code, data-processing and EV-profile generation workflows, model files,
+  analysis outputs, and 72 executed runs accompanying a study of vehicle-to-grid
   demand response in local energy communities. Some restricted market and carbon-intensity
   inputs are not included and must be obtained from their providers.
 url: "https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage"

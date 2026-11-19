@@ -2,18 +2,18 @@
 
 ## Materials in this repository
 
-The repository now includes the full analysis source tree under [`reproduction/`](../reproduction/): source input files included in the project, input-preparation scripts, fitted EV-profile inputs and generator, the PLEXOS model and checks, post-processing and figure scripts, and the CSV/PDF results.
+The repository includes the available study source tree under [`reproduction/`](../reproduction/): included input files, input-preparation scripts, fitted EV-profile inputs and generator, the PLEXOS model and checks, post-processing and figure scripts, and the CSV/PDF results. This is the complete source package currently published here, but it is not by itself a fully self-contained reproduction environment.
 
 The separate [v13-results release](https://github.com/GreenPow-Labs/v2g-lec-multi-market-arbitrage/releases/tag/v13-results) contains the 72 executed PLEXOS runs, logs, solution databases, and associated run files. Follow [`reproduction/README.md`](../reproduction/README.md) for download commands, checksums, dependencies, and workflow order.
 
 ## What can be rerun
 
 - **Post-processing:** after downloading and unpacking the run archive and obtaining the restricted inputs listed below, run `reproduction/postprocessing/run_all.py` to regenerate KPI tables and figures under `reproduction/results/`.
-- **Input preparation and EV profiles:** scripts and fitted EV-profile distributions are included. The source Straub trip records used to fit the distributions are not included, so that original fitting step cannot be independently repeated from this repository.
+- **Input preparation and EV profiles:** scripts, fitted EV-profile distributions and generated model profiles are included. The source Straub trip records used to fit the distributions are not included, so the original fitting step cannot be independently repeated from this repository.
 - **Model build and validation:** model-generation and check scripts are included. The execution checks operate on the archived runs.
 - **PLEXOS simulations:** rebuilding and executing the model requires PLEXOS 11 and Gurobi. The executed runs in the release let readers inspect results without those tools.
 
-The study README records expected check outputs and the clean-copy reproduction procedure reported by the maintainers. This repository snapshot has not been independently rerun as part of this documentation update.
+The study README records check outputs and a clean-copy reproduction procedure reported by the maintainers. Those reports are not an independent rerun of this repository snapshot. The documentation and file inventory were reviewed; simulations and full numerical reproduction were not run for this update.
 
 ## Restricted inputs
 

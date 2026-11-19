@@ -1,6 +1,6 @@
 # Multi-pricing V2G arbitrage in a local energy community
 
-This directory contains the model, input data, preprocessing, EV-profile generation, post-processing, and result files for the study *"Multi-Pricing Arbitrage Potential for V2G Demand Response Services in Local Energy Communities"* by F. Maldonato, F. Ruilova, M. Noori, M. Azizkhani and D. Göhlich (submitted to IEEE Access). It is part of the public GreenPow Labs repository.
+This directory contains the model, included input data, preprocessing, EV-profile generation, post-processing, and result files associated with *"Multi-Pricing Arbitrage Potential for V2G Demand Response Services in Local Energy Communities"* by F. Maldonato, F. Ruilova, M. Noori, M. Azizkhani and D. Göhlich. It is part of the public GreenPow Labs repository. Check the paper's final version for its current publication status and citation details.
 
 Use the [reproduction steps](#reproduce-the-papers-results) to regenerate the supplied analysis outputs from the executed PLEXOS runs. The [full pipeline](#full-pipeline) describes how to prepare inputs, generate the EV dataset, rebuild the PLEXOS model, and run the simulations. Some market and carbon-intensity inputs must be obtained separately from their providers; rerunning PLEXOS requires a valid PLEXOS/Gurobi environment.
 
@@ -18,8 +18,9 @@ A residential local energy community (LEC), operated as a balance group, is simu
   - **X.1, optimization:** the schedule is optimized with forecast data;
   - **X.2, settlement:** the X.1 schedule is replayed with the actual RES generation and load; every deviation is settled
     at the German imbalance price (reBAP). The X.1 schedule is pinned with exact "=" constraints (no slack, no penalty).
-- **Sensitivity analysis (2025):** one factor at a time: EV fleet (50 to 400 EVs), RES capacity (x0.5 to x1.5), consumer
-  load with RES (x0.5 to x2) and fleet mix (0 to 100 % residents' EVs).
+- **Sensitivity analysis (2025):** one factor at a time: EV fleet (50 to 400 EVs), RES penetration (40 %, 60 %, 100 % and
+  120 %, against an 80 % base case; equivalent to 0.5×, 0.75×, 1.25× and 1.5× its PV/wind capacity), consumer load
+  scaled together with RES (50 % to 200 % of the base load), and the resident share of the EV fleet (0 % to 100 %).
 
 In total, 72 PLEXOS runs: 18 for the three years and 54 for the sensitivity analysis.
 
@@ -120,9 +121,11 @@ python3 run_all.py
 cd ..
 ```
 
-The first step prints a settlement check; every settlement run must match its ex-post value:
-`SETTLEMENT CHECK: 31 settlement runs, max |imbalance - expected| 0.00989 kW, max |revenue - ex post| 0.0018 EUR`.
-The outputs equal the files in `results/` of this repository.
+The first step prints a settlement check; every checked schedule is compared with its ex-post value:
+`SETTLEMENT CHECK: 31 check rows, max |imbalance - expected| 0.00989 kW, max |revenue - ex post| 0.0018 EUR`.
+The generated tables and figures are written under `results/`. The repository includes a reference set there; compare regenerated files with that set when checking a new environment. This repository snapshot was not independently rerun as part of the documentation review.
+
+The settlement-check count refers to output rows, including four baseline reference cases repeated in the sensitivity summaries. It is not the number of distinct PLEXOS run folders: the archive contains 72 runs in total, of which 27 are distinct settlement runs.
 
 **Step 5 (optional). Check the PLEXOS runs themselves.**
 
@@ -177,8 +180,8 @@ python3 prepare_inputs.py               # 2023 and 2024 inputs, and the actual l
 python3 prepare_inputs.py --check-2025  # optional: compares a rebuild of 2025 with the shipped 2025 files
 ```
 
-The 2025 files are the originals of the study. A rebuild differs from them only in a few hours around the two
-daylight-saving switches, so they are kept as they are.
+The 2025 files are the originals used in the study. A rebuild differs from them only in a few hours around the two
+daylight-saving switches, so the shipped files are retained as the reference inputs.
 
 **2. Restricted inputs** into the model folder: as in step 3 above, without `--model` (the default is
 `model/DRJ_MultiYear_v13`).
@@ -209,8 +212,8 @@ python3 check_model.py             # expected: 0 errors, 0 warnings; writes mode
 ```
 
 **5. Run the simulations in PLEXOS:** open `model/DRJ_MultiYear_v13/DRJ_MultiYear_v13.xml` and run the folder
-"All models (run in name order)" in one go, one model at a time (about 30 minutes on 2 cores). Every model reads only
-solutions of models whose names sort before its own, so the name order is a valid run order.
+"All models (run in name order)" in one go, one model at a time (about 30 minutes on 2 cores in the documented
+environment). Follow `model/DRJ_MultiYear_v13/run_order.csv`; it records the required order and dependencies.
 
 **6. Check the runs and run the post-processing:**
 
