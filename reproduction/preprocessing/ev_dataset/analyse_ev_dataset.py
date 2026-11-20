@@ -9,8 +9,9 @@
 3. Generated dataset, per cohort and for the fleet mix: weekly connected share and driving (trip events), stays and
    absences per week, arrival/departure hours, stay durations, distances, energy per absence, en-route share (Table 6).
 4. Validation of the charging shape: ELVIS simulates the sessions with its uncontrolled policy (UC: 11 kW from arrival
-   until full), four weeks of March 2025, 15-min steps; the Monday-Thursday mean hourly power of residents and employees
-   is compared with Straub's charging scenarios recomputed from his trips (Pearson r, peak hour, peak/mean).
+   until full), all of 2025, 15-min steps; the Monday-Thursday mean hourly power of residents and employees is compared
+   with Straub's charging scenarios recomputed from his trips (Pearson r, peak hour, peak/mean); the figure shows each
+   profile as its share of the day's charging energy per hour.
 5. Connected share of the fleet by hour across the fleet mix (0-100 % residents), against two reference fleets in
    inputs/: the emobpy fleet of the German mobility survey MiD 2017 (100 residents' EVs) and the first submission's
    ELVIS charging park.
@@ -157,7 +158,7 @@ def soc_events(x):
     return out
 
 
-def elvis_uc(s, cohorts, start, weeks, n_per_cohort):
+def elvis_uc(s, cohorts, start, end, n_per_cohort):
     """Aggregate uncontrolled charging load [kW] of the cohorts' sessions, simulated with ELVIS (15-min steps)."""
     from elvis.config import ScenarioConfig
     from elvis.simulate import simulate
@@ -166,7 +167,7 @@ def elvis_uc(s, cohorts, start, weeks, n_per_cohort):
     from elvis.battery import EVBattery
     from elvis.set_up_infrastructure import wallbox_infrastructure
     from elvis.utility.elvis_general import num_time_steps
-    end = start + dt.timedelta(weeks=weeks) - dt.timedelta(minutes=15)
+    end = end - dt.timedelta(minutes=15)  # last time step
     ev = ElectricVehicle("VW", "ID", EVBattery(capacity=mf.CAPACITY, max_charge_power=RATE, min_charge_power=0, efficiency=1), 1.0)
     events = []
     for c, n in zip(cohorts, n_per_cohort):
@@ -243,7 +244,8 @@ def duration_density(park_q, key, lo=0.0, hi=np.inf, edges=np.arange(0, 24.5, 1.
 
 def emobpy_reference(year=2025):
     """emobpy / MiD 2017 fleet of 100 residents' EVs (inputs/): connected share by hour on Monday-Friday and the uncontrolled
-    charging shape on Monday-Thursday (11 kW from plug-in until the energy driven is back), normalised to its daily mean."""
+    charging power on Monday-Thursday (11 kW from plug-in until the energy driven is back), and the connected share by
+    hour of the week (Monday 0 h first)."""
     plugged = pd.read_csv(HERE / "inputs" / "emobpy_MiD2017_plugged.csv", sep=";", index_col=0, parse_dates=True)
     kmp = pd.read_csv(HERE / "inputs" / "emobpy_MiD2017_km.csv", sep=";", index_col=0, parse_dates=True)
     yr = slice(f"{year}-01-01", f"{year}-12-31 23:00")
@@ -254,7 +256,7 @@ def emobpy_reference(year=2025):
     wd5, wd4, hr = np.asarray(idx.dayofweek < 5), np.asarray(idx.dayofweek < 4), np.asarray(idx.hour)
     connected = pd.Series(conn.mean(axis=1)[wd5]).groupby(hr[wd5]).mean().to_numpy()
     shape = pd.Series(charge[wd4]).groupby(hr[wd4]).mean().to_numpy()
-    return connected, shape
+    return connected, shape, weekly(conn.T.astype(float), idx)
 
 
 def figures(out, inp_hourly, park_q, wk, wkm, val, hourly_cmp):
@@ -328,11 +330,11 @@ def figures(out, inp_hourly, park_q, wk, wkm, val, hourly_cmp):
              ("charging at work, Straub work-charging scenario 22 kW", col["WF"], "--", 0.8, "Straub, work")]
     handles = []
     for key, color, ls, lw, lab in lines:
-        handles += a.plot(hrs + 0.5, val[key] / val[key].mean(), color=color, ls=ls, lw=lw, label=lab)
+        handles += a.plot(hrs + 0.5, 100 * val[key] / val[key].sum(), color=color, ls=ls, lw=lw, label=lab)
     if emob_uc is not None:
-        handles += a.plot(hrs + 0.5, emob_uc / emob_uc.mean(), color=EMOBPY, ls=":", lw=1.0, label="emobpy (MiD 2017)")
-    a.set_xlim(0, 24); a.set_xticks(range(0, 25, 6)); a.set_ylim(0, 6); a.set_yticks(range(0, 7, 2))
-    a.set_xlabel("Hour (Monday–Thursday)", labelpad=1); a.set_ylabel("Power / daily mean [–]")
+        handles += a.plot(hrs + 0.5, 100 * emob_uc / emob_uc.sum(), color=EMOBPY, ls=":", lw=1.0, label="emobpy (MiD 2017)")
+    a.set_xlim(0, 24); a.set_xticks(range(0, 25, 6)); a.set_ylim(0, 25); a.set_yticks(range(0, 26, 5))
+    a.set_xlabel("Hour (Monday–Thursday)", labelpad=1); a.set_ylabel("Share of daily charging\nenergy [% per h]")
     a.set_title("(a) Uncontrolled charging", loc="left")
     a = ax[1]
     for share, color in SWEEP_GRAYS.items():
@@ -364,9 +366,11 @@ def figures(out, inp_hourly, park_q, wk, wkm, val, hourly_cmp):
     for c in mf.COHORTS:
         a.plot(t, 100 * wk[c], color=col[c], lw=0.7, label=c)
     a.plot(t, 100 * wk["fleet"], color=INK, lw=1.2, label=f"fleet ({int(100 * mf.RESIDENTIAL_SHARE)} % res.)")
+    if "emobpy (MiD 2017), residents" in wk:
+        a.plot(t, 100 * wk["emobpy (MiD 2017), residents"], color=EMOBPY, ls=":", lw=1.0, label="emobpy (MiD 2017)")
     a.set_ylabel("Connected [%]"); a.set_ylim(0, 100); a.set_yticks(range(0, 101, 25))
     a.set_title("(a) Connected to the community's charging points", loc="left", pad=11)
-    a.legend(ncol=5, loc="lower left", bbox_to_anchor=(-0.01, 0.985), **{**leg, "handlelength": 1.2, "columnspacing": 0.9})
+    a.legend(ncol=6, loc="lower left", bbox_to_anchor=(-0.01, 0.985), **{**leg, "handlelength": 1.2, "columnspacing": 0.6})
     a = ax[1]
     for g, cs in GROUP.items():
         a.plot(t, wkm[g], color=col[cs[0]], lw=0.7, label={"residential": "residents' EVs", "workplace": "employees' EVs"}[g])
@@ -407,16 +411,14 @@ def main():
     sh = inp["cohort shares"]
     wkm = {g: sum(sh[c] * kmw[c] for c in cs) for g, cs in GROUP.items()}
     wkm["fleet"], _ = fleet_mix(kmw, mf.RESIDENTIAL_SHARE, inp)
-    pd.DataFrame({**{f"connected {k} [-]": v for k, v in wk.items()}, **{f"km per car and h, {k}": v for k, v in wkm.items()}}).round(5).to_csv(
-        out / "ev_dataset_weekly.csv", sep=";", index_label="hour of week (Monday 0 h)")
 
     # charging shapes: ELVIS uncontrolled, RLI rule
     n_res = (30, 70)  # vehicles per cohort in the simulation, in the cohorts' proportions
     n_emp = (78, 22)
     val = {}
-    start = dt.datetime(2025, 3, 3)
+    start, end = dt.datetime(2025, 1, 1), dt.datetime(2026, 1, 1)  # all of 2025
     for name, cs, n in [("residents", GROUP["residential"], n_res), ("employees", GROUP["workplace"], n_emp)]:
-        load = elvis_uc(s, cs, start, 4, n)
+        load = elvis_uc(s, cs, start, end, n)
         keep = load.index.day_of_week < 4
         val[f"ELVIS UC, {name}"] = load[keep].groupby(load.index[keep].hour).mean().to_numpy()
         val[f"RLI rule, {name}"] = spread_rule(s, cs, n)
@@ -443,8 +445,10 @@ def main():
         label = f"base fleet, {int(100 * share)} % residents" if share == mf.RESIDENTIAL_SHARE else f"fleet, {int(100 * share)} % residents"
         cmp[label] = pd.Series(conn[keep]).groupby(np.asarray(idx.hour)[keep]).mean().to_numpy()
     hourly_cmp = cmp
-    val["emobpy (MiD 2017) connected"], val["emobpy (MiD 2017) UC"] = emobpy_reference()  # reference fleet in Fig. 4
+    val["emobpy (MiD 2017) connected"], val["emobpy (MiD 2017) UC"], wk["emobpy (MiD 2017), residents"] = emobpy_reference()  # Figs. 4, 5
     ours = val
+    pd.DataFrame({**{f"connected {k} [-]": v for k, v in wk.items()}, **{f"km per car and h, {k}": v for k, v in wkm.items()}}).round(5).to_csv(
+        out / "ev_dataset_weekly.csv", sep=";", index_label="hour of week (Monday 0 h)")
     pd.DataFrame({**{f"connected, {k} [-]": v for k, v in hourly_cmp.items()}, **{f"charging shape, {k}": v for k, v in ours.items()},
                   **{f"generated: {k}": v for k, v in gen.items()}}).round(5).to_csv(out / "ev_dataset_hourly.csv", sep=";", index_label="hour")
     figures(out, inp_hourly, park_q, wk, wkm, val, hourly_cmp)

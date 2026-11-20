@@ -1,4 +1,4 @@
 profile;reference;r;peak hour (mine);peak hour (reference);peak/mean (mine);peak/mean (reference)
-ELVIS UC, residents;charging at home, Straub home-charging scenario (recomputed from his trips);0.743;17.0;17.0;2.383;1.579
-ELVIS UC, employees;charging at work, same rule at 11 kW (recomputed from his trips);0.97;8.0;8.0;5.115;4.27
-ELVIS UC, employees;charging at work, Straub work-charging scenario 22 kW (recomputed from his trips);0.953;8.0;8.0;5.115;4.292
+ELVIS UC, residents;charging at home, Straub home-charging scenario (recomputed from his trips);0.742;16.0;17.0;2.369;1.579
+ELVIS UC, employees;charging at work, same rule at 11 kW (recomputed from his trips);0.96;8.0;8.0;5.24;4.27
+ELVIS UC, employees;charging at work, Straub work-charging scenario 22 kW (recomputed from his trips);0.941;8.0;8.0;5.24;4.292
